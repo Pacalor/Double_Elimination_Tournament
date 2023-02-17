@@ -1,7 +1,6 @@
 
-/**
- * Hello world!
- *
+/*
+ * Main execution class, it will be the API to call in order to use the TDE
  */
 public class App 
 {
