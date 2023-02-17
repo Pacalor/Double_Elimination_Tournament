@@ -1,0 +1,6 @@
+{
+    "java.project.sourcePaths": [
+        "src",
+        "tde/src/main/java/tde/cli"
+    ]
+}
