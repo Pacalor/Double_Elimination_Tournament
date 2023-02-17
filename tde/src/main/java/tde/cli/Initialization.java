@@ -5,5 +5,5 @@ package tde.cli;
  * 
  */
 public class Initialization {
-    
+
 }
