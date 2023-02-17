@@ -1,3 +1,4 @@
+package tde.cli;
 
 /*
  * UI class

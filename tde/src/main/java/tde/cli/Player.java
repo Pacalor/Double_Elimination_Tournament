@@ -1,3 +1,5 @@
+package tde.cli;
+
 /**
  * Player
  */
