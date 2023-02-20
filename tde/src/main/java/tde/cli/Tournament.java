@@ -3,28 +3,36 @@ package tde.cli;
 import java.util.ArrayList;
 
 /*
- * Class that will hold the tournament, and the branches. It's function will be to do rounds of matches
- * 
+ * Class that will hold the tournament, and the branches. 
+ * Its function will be to do rounds of matches
  */
 
 public class Tournament {
-    private ArrayList<Player> initialPlayers;
+    private ArrayList<Branch> branches;
 
-    public Tournament(ArrayList<Player> _players) {
-        initialPlayers = _players;
+    public Tournament(ArrayList<Branch> _branches) {
+        branches = _branches;
     }
 
     /**
-     * Method to run the tournament
+     * 
      */
-    public void round() {
-        // Starting branch
-        Branch round = new Branch(initialPlayers);
+    public void run(){
+        // CLI needed
+        CLI cli = new CLI();
 
-        // while there are players in the branch, keep going
-        while (round.getPlayers().size() > 1) {
-            round.resolve_branch();
-            round.new_round();
-        }
+        // Initialization
+        Initialization init = new Initialization(cli);
+        ArrayList<Player> players = (ArrayList) init.start(0, 0);
+
+        // once we have the players, we can start the tournament
+        // by resolving a branch
+        Branch branch = new Branch(players);
+
+        branch.resolve_branch();
+        branch.new_round();
+
+        // store the resulting branch in branches
+        branches.add(branch);
     }
 }

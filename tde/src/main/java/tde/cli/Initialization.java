@@ -84,7 +84,7 @@ public class Initialization {
 
 
     /**
-     * function to do a generic X playerrs
+     * function to do a generic X players
      * @param size number of players
      */
     private void basic(int size) {
