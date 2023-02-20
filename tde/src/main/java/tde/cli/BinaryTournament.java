@@ -49,7 +49,7 @@ public class BinaryTournament {
         switch (method) {
             
             case 0: //CLI method
-                winner = CLI.askWinner(player1,player2);
+                winner = ui.askWinner(player1,player2);
                 break;
 
             case 1: //Random method
