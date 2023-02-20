@@ -24,6 +24,7 @@ public class Branch {
      */
     public ArrayList<Player> resolve_branch() {
         // Instantiate BinaryTournament class
+        // TODO: insert CLI parameter into BinaryTournaments
         BinaryTournament bitour = new BinaryTournament(null, 0);
 
         // run matches
@@ -59,6 +60,10 @@ public class Branch {
         return losers;
     }
 
+    /**
+     * Start a new round by storing the winners in players
+     * and clearing winners and losers
+     */
     public void new_round() {
 
         players = new ArrayList<Player>(winners);

@@ -5,5 +5,7 @@ package tde.cli;
  * 
  */
 public class Tournament {
+    public Tournament(Branch _branch){
 
+    }
 }
