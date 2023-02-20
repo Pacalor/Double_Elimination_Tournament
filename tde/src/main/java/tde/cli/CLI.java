@@ -1,5 +1,6 @@
 package tde.cli;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -17,30 +18,40 @@ public class CLI {
         keyboard = new Scanner(System.in);
     }
 
-    public void wellcome(){
+    public int wellcome(){
         System.out.println(WELCOMEMENSAJE);
 
         System.out.println("Please introduce the number of rounds" );
 
         int rounds = Integer.parseInt(keyboard.nextLine());
+        return rounds;
+    }
 
-        System.out.println("Please introduce the type of initialization" );
+    public int initializationType(){
         System.out.println(MENUINITIALIZATION);
 
-        
+        System.out.println("Please introduce the selected number" );
+
+        int selected = Integer.parseInt(keyboard.nextLine());
+        return selected;
     }
 
     public boolean askWinner(Player player1, Player player2) {
         return false;
     }
 
-<<<<<<< HEAD
-=======
-    public List<Player> getPlayers() {
-        return null;
+    public ArrayList<Player> getPlayers() {
+        System.out.println("Please introduce the selected number" );
+        ArrayList<Player> players = new ArrayList<>();
+
+        int numPlayer = Integer.parseInt(keyboard.nextLine());
+
+        for (int i = 0; i < numPlayer; i++) {
+            System.out.println("Please introduce the number of a player" );
+            players.add(new Player(keyboard.nextLine()));
+        }
+
+        return players;
     }
 
-
-    
->>>>>>> 6f7be0fd358158c0e01b6a674b729c160dd93e3b
 }
