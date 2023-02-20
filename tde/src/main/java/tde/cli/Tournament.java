@@ -10,8 +10,8 @@ import java.util.ArrayList;
 public class Tournament {
     private ArrayList<Branch> branches;
 
-    public Tournament(ArrayList<Branch> _branches) {
-        branches = _branches;
+    public Tournament() {
+        branches = new ArrayList<>();
     }
 
     /**
@@ -27,7 +27,7 @@ public class Tournament {
 
         // once we have the players, we can start the tournament
         // by resolving a branch
-        Branch branch = new Branch(players);
+        Branch branch = new Branch(players,cli);
 
         branch.resolve_branch();
         branch.new_round();

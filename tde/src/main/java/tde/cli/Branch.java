@@ -1,5 +1,6 @@
 package tde.cli;
 
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -11,11 +12,14 @@ public class Branch {
     private ArrayList<Player> players;
     private ArrayList<Player> winners;
     private ArrayList<Player> losers;
-
-    public Branch(ArrayList<Player> _players) {
+    private CLI ui;
+    private Random random;
+    public Branch(ArrayList<Player> _players, CLI cli) {
         players = _players;
         winners = new ArrayList<>();
         losers = new ArrayList<>();
+        ui=cli;
+        random = new Random(LocalTime.now().getNano());
     }
 
     /**
@@ -27,18 +31,19 @@ public class Branch {
     public ArrayList<Player> resolve_branch() {
         // Instantiate BinaryTournament class
         // TODO: insert CLI parameter into BinaryTournaments
-        BinaryTournament bitour = new BinaryTournament(null, 0);
-
+        BinaryTournament bitour = new BinaryTournament(ui, 0);
+        
         // run matches
         // TODO: missing odd players situation
         while (players.size() > 1) {
             // pick random users
             int player1, player2;
-            Random random = new Random();
+            
             do {
-                player1 = random.nextInt(players.size() - 1);
-                player2 = random.nextInt(players.size() - 1);
-            } while (player1 != player2);
+                player1 = random.nextInt(players.size());
+                player2 = random.nextInt(players.size());
+                System.out.println("selection"+player1+" "+player2);
+            } while (player1 == player2);
 
             // Add the player to its correspondent list
             if (bitour.run(players.get(player1), players.get(player2))) {

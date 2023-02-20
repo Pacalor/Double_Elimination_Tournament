@@ -11,43 +11,50 @@ import static tde.cli.Constants.*;
  */
 public class CLI {
     private Scanner keyboard;
-    
-    
 
     public CLI() {
         keyboard = new Scanner(System.in);
     }
 
-    public int wellcome(){
+    public int wellcome() {
         System.out.println(WELCOMEMENSAJE);
 
-        System.out.println("Please introduce the number of rounds" );
+        System.out.println("Please introduce the number of rounds");
 
         int rounds = Integer.parseInt(keyboard.nextLine());
         return rounds;
     }
 
-    public int initializationType(){
+    public int initializationType() {
         System.out.println(MENUINITIALIZATION);
 
-        System.out.println("Please introduce the selected number" );
+        System.out.println("Please introduce the selected number");
 
         int selected = Integer.parseInt(keyboard.nextLine());
         return selected;
     }
 
     public boolean askWinner(Player player1, Player player2) {
-        return false;
+        System.out.println("Match between " + player1.getName() + " and " + player2.getName() + ". Who wins?");
+
+        String selected = keyboard.nextLine();
+        boolean winner = false;
+
+        if (selected.equals(player1.getName())) {
+            winner = true;
+        }
+
+        return winner;
     }
 
     public ArrayList<Player> getPlayers() {
-        System.out.println("Please introduce the selected number" );
+        System.out.println("Please introduce the selected number");
         ArrayList<Player> players = new ArrayList<>();
 
         int numPlayer = Integer.parseInt(keyboard.nextLine());
 
         for (int i = 0; i < numPlayer; i++) {
-            System.out.println("Please introduce the number of a player" );
+            System.out.println("Please introduce the number of a player");
             players.add(new Player(keyboard.nextLine()));
         }
 

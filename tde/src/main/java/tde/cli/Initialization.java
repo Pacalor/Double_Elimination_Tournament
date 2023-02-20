@@ -43,7 +43,7 @@ public class Initialization {
                 try {
                     readText();
                 } catch (FileNotFoundException e) {
-                    Logger.getAnonymousLogger().log(Level.INFO, DATAFILE + " file not found");
+                    Logger.getAnonymousLogger().log(Level.INFO, DATAFILE + " file not found in ");
                 } catch (IOException e) {
                     Logger.getAnonymousLogger().log(Level.INFO, DATAFILE + " error reading the file");
                 }
