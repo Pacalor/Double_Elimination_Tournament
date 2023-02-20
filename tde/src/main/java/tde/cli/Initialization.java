@@ -51,6 +51,9 @@ public class Initialization {
             case 1:
                 basic(size);
             break;
+            case 2:
+                fromCLI();
+            break;
         }
 
         return players;
