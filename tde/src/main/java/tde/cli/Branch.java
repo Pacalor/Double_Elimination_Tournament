@@ -21,6 +21,8 @@ public class Branch {
     /**
      * This method will pair the players on a branch
      * and return the losers
+     * 
+     * @return losers
      */
     public ArrayList<Player> resolve_branch() {
         // Instantiate BinaryTournament class
@@ -70,5 +72,9 @@ public class Branch {
 
         winners.clear();
         losers.clear();
+    }
+
+    public ArrayList<Player> getPlayers() {
+        return players;
     }
 }
