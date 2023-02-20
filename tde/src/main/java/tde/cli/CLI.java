@@ -34,10 +34,13 @@ public class CLI {
         return false;
     }
 
+<<<<<<< HEAD
+=======
     public List<Player> getPlayers() {
         return null;
     }
 
 
     
+>>>>>>> 6f7be0fd358158c0e01b6a674b729c160dd93e3b
 }
