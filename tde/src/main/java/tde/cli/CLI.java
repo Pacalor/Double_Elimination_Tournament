@@ -56,7 +56,7 @@ public class CLI {
     }
 
     public ArrayList<Player> getPlayers() {
-        System.out.println("Please introduce the selected number");
+        System.out.println("Please introduce the amount of players");
         ArrayList<Player> players = new ArrayList<>();
 
         int numPlayer = Integer.parseInt(keyboard.nextLine());

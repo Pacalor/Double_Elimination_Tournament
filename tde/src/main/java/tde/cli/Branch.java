@@ -69,7 +69,7 @@ public class Branch {
      */
     public void new_round() {
 
-        players = new ArrayList<Player>(winners);
+        players.addAll(new ArrayList<Player>(winners));
 
         winners.clear();
         losers.clear();
@@ -77,5 +77,13 @@ public class Branch {
 
     public ArrayList<Player> getPlayers() {
         return players;
+    }
+
+
+    public void addPlayers(ArrayList<Player> pToAdd){
+
+        for (Player player : pToAdd) {
+            players.add(player);
+        }
     }
 }
