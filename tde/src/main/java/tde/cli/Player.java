@@ -26,6 +26,6 @@ public class Player {
      * @see java.lang.Object#toString()
      */
     public String toString() {
-        return "Player:" + name;
+        return name;
     }
 }

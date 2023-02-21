@@ -19,9 +19,9 @@ public class CLI {
     public int welcome() {
         System.out.println(WELCOMEMENSAJE);
 
-        System.out.println("Please introduce how many times you can lose");
+        // System.out.println("Please introduce how many times you can lose");
 
-        int rounds = Integer.parseInt(keyboard.nextLine());
+        int rounds = 2; // Integer.parseInt(keyboard.nextLine());
         return rounds;
     }
 
@@ -34,9 +34,9 @@ public class CLI {
     }
 
     public int initializationType() {
+        System.out.println("Please choose an option to insert the players:");
         System.out.println(MENUINITIALIZATION);
 
-        System.out.println("Please introduce the selected number");
 
         int selected = Integer.parseInt(keyboard.nextLine());
         return selected;
@@ -51,7 +51,7 @@ public class CLI {
         if (selected.equals(player1.getName())) {
             winner = true;
         }
-
+        System.out.print("Winner is " + (winner ? player1 : player2));
         return winner;
     }
 
