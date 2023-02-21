@@ -5,6 +5,7 @@ package tde.cli;
  */
 public class App {
     public static void main(String[] args) {
-        System.out.println("Hallo Welt!");
+        Tournament tournament = new Tournament();
+        tournament.run();
     }
 }
