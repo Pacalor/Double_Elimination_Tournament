@@ -14,11 +14,16 @@ public class Branch {
     private ArrayList<Player> losers;
     private CLI ui;
     private Random random;
+
+    /**
+     * @param _players
+     * @param cli
+     */
     public Branch(ArrayList<Player> _players, CLI cli) {
         players = _players;
         winners = new ArrayList<>();
         losers = new ArrayList<>();
-        ui=cli;
+        ui = cli;
         random = new Random(LocalTime.now().getNano());
     }
 
@@ -30,15 +35,13 @@ public class Branch {
      */
     public ArrayList<Player> resolve_branch() {
         // Instantiate BinaryTournament class
-        // TODO: insert CLI parameter into BinaryTournaments
         BinaryTournament bitour = new BinaryTournament(ui, 0);
-        
+
         // run matches
-        // TODO: missing odd players situation
         while (players.size() > 1) {
             // pick random users
             int player1, player2;
-            
+
             do {
                 player1 = random.nextInt(players.size());
                 player2 = random.nextInt(players.size());
@@ -75,12 +78,17 @@ public class Branch {
         losers.clear();
     }
 
+    /**
+     * @return players
+     */
     public ArrayList<Player> getPlayers() {
         return players;
     }
 
-
-    public void addPlayers(ArrayList<Player> pToAdd){
+    /**
+     * @param pToAdd
+     */
+    public void addPlayers(ArrayList<Player> pToAdd) {
 
         for (Player player : pToAdd) {
             players.add(player);
