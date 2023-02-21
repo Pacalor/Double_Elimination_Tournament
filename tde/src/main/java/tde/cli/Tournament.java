@@ -28,11 +28,16 @@ public class Tournament {
         // once we have the players, we can start the tournament
         // by resolving a branch
         Branch branch = new Branch(players);
+        branches.add(branch);
+
+// for each branch, resolve and start new round
+for (Branch branx : branches) {
+
+    
+}
 
         branch.resolve_branch();
         branch.new_round();
 
-        // store the resulting branch in branches
-        branches.add(branch);
     }
 }
