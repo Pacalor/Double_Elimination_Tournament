@@ -16,10 +16,18 @@ public class CLI {
         keyboard = new Scanner(System.in);
     }
 
-    public int wellcome() {
+    public int welcome() {
         System.out.println(WELCOMEMENSAJE);
 
-        System.out.println("Please introduce the number of rounds");
+        System.out.println("Please introduce how many times you can lose");
+
+        int rounds = Integer.parseInt(keyboard.nextLine());
+        return rounds;
+    }
+
+    public int playerNumber() {
+
+        System.out.println("Please introduce the number of players");
 
         int rounds = Integer.parseInt(keyboard.nextLine());
         return rounds;

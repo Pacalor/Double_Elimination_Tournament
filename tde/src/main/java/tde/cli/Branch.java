@@ -42,7 +42,6 @@ public class Branch {
             do {
                 player1 = random.nextInt(players.size());
                 player2 = random.nextInt(players.size());
-                System.out.println("selection"+player1+" "+player2);
             } while (player1 == player2);
 
             // Add the player to its correspondent list
@@ -60,11 +59,8 @@ public class Branch {
             // remove players from general list
             players.remove(players.get(player1));
             players.remove(toDelete);
-
-            // TODO: David dice que players estará vacío, por no se qué de memoria xD
-
         }
-        return losers;
+        return new ArrayList<>(losers);
     }
 
     /**
