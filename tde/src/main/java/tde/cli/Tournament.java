@@ -43,14 +43,15 @@ public class Tournament {
         branches.add(branch);
 
         boolean thereIsAMatch = true;
-        boolean finishTournament=false;
+        boolean finishTournament = false;
         ArrayList<Player> losers = null;
+        String winString = "And the final winner is :";
 
         for (int i = 0; !finishTournament; i++) {
 
             if (i == totalLose) {
                 i = 0;
-                thereIsAMatch=false;
+                thereIsAMatch = false;
             }
 
             Branch _branch = branches.get(i);
@@ -59,17 +60,34 @@ public class Tournament {
                 System.out.println("--------------------  BRANCH -" + i);
                 losers = _branch.resolve_branch();
                 _branch.new_round();
-                thereIsAMatch=true;
+                thereIsAMatch = true;
+
+                if (branches.size() < totalLose)
+                    branches.add(new Branch(losers, cli));
+                else if (i < (totalLose - 1)) {
+                    branches.get(i + 1).addPlayers(losers);
+                }
             }
 
-            if (branches.size() < totalLose)
-                branches.add(new Branch(losers, cli));
+            if (i == (totalLose - 1) && !thereIsAMatch) {
+                BinaryTournament deathmatch = new BinaryTournament(cli, 0);
+                Player player1 = branches.get(0).getPlayers().get(0);
+                Player player2 = branches.get(1).getPlayers().get(0);
+                
 
-            if(i==(totalLose-1) && !thereIsAMatch) finishTournament=true;
+                if (!deathmatch.run(player1, player2)) {
+                    if(deathmatch.run(player1, player2))
+                        winString += player1.getName();
+                    else
+                        winString += player2.getName();
+                } else {
+                    winString += player1.getName();
+                }
+
+                finishTournament = true;
+            }
         }
-
-
-        //TODO winners battle of death
-
+        
+        System.out.println(winString);
     }
 }
