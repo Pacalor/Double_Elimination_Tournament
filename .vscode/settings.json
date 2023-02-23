@@ -2,5 +2,7 @@
     "java.project.sourcePaths": [
         "src",
         "tde/src/main/java/tde/cli"
-    ]
+    ],
+    "terminal.explorerKind": "external",
+    "java.debug.settings.console": "externalTerminal"
 }
