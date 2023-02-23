@@ -3,6 +3,6 @@
         "src",
         "tde/src/main/java/tde/cli"
     ],
-    "terminal.explorerKind": "external",
+    "terminal.explorerKind": "integrated",
     "java.debug.settings.console": "externalTerminal"
 }
