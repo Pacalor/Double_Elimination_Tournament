@@ -89,9 +89,29 @@ public class Branch {
      * @param pToAdd
      */
     public void addPlayers(ArrayList<Player> pToAdd) {
-
         for (Player player : pToAdd) {
             players.add(player);
         }
+    }
+
+    // methods created for testing purposes
+    public void addWinners(ArrayList<Player> pToAdd) {
+        for (Player player : pToAdd) {
+            winners.add(new Player(player.getName()));
+        }
+    }
+
+    public ArrayList<Player> getWinners(){
+        return winners;
+    }
+
+    public void addLosers(ArrayList<Player> pToAdd) {
+        for (Player player : pToAdd) {
+            losers.add(new Player(player.getName()));
+        }
+    }
+
+    public ArrayList<Player> getLosers(){
+        return losers;
     }
 }
